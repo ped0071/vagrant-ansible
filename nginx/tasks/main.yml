@@ -1,0 +1,11 @@
+---
+- name: Instalando Nginx
+  apt: name=nginx state=latest
+  become: true
+  notify: reiniciando nginx
+
+- name: Copiando arquivo html
+  template: src=index.html dest=/var/www/html
+  become: true
+  notify: reiniciando nginx
+...

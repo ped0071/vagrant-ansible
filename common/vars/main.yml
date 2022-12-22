@@ -1,0 +1,11 @@
+---
+# vars file for vagrant-ansible
+packages:
+  - vim
+  - curl
+  - telnet
+  - unzip
+  - wget
+  - net-tools
+  - htop
+  - nmap

@@ -1,0 +1,20 @@
+---
+# tasks file for vagrant-ansible
+- name: Instalando pacotes essenciais
+  apt: 
+    name: "{{ packages }}"
+    state: latest
+  become: true
+
+- name: Alterando nome da máquina
+  hostname:
+    name: vagrant-ansible
+  become: true
+
+- name: Criando usuário
+  user:
+    name: user01
+    shell: /bin/bash
+    groups: sudo
+    password: "{{ senhas }}"
+  become: true
